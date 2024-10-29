@@ -1,0 +1,12 @@
+name: eddi
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - cartopy
+  - matplotlib
+  - numpy
+  - ipykernel
+  - basemap
+  - metpy
+  - geopandas
