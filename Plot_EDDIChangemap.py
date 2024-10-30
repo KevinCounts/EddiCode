@@ -100,7 +100,7 @@ def plotgen(path,dir_list):
             lonin2d, latin2d = np.meshgrid(lonin,latin)
             if delta == '07':
                 delta = '7'
-            ax.set_title(str(int(TSnum))+"-"+TSout+' EDDI: changes during the ' + delta + ' days ending on ' +month_name+" "+str(int(DD))+", "+YYYY, fontsize=9,weight='normal',y=1.0)
+            ax.set_title(TSnum.lstrip("0")+"-"+TSout+' EDDI: changes during the ' + delta + ' days ending on ' +month_name+" "+str(int(DD))+", "+YYYY, fontsize=9,weight='normal',y=1.0)
             conf = ax.pcolormesh(lonin2d,latin2d,invar,transform=ccrs.PlateCarree(),norm=norm1,cmap=cmap1)
 
             #Create colorbar to match data. Colorbar will be placed automatically, but labels need to be positioned specifically

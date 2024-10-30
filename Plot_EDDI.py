@@ -270,7 +270,7 @@ def plotgen(latlon,shapefiles,color,lw,blncounties,path,dir_list,stakeholder):
             lonin, latin, invar = geoparam(datain_str)
             month_name = calendar.month_name[int(MM)]
             lonin2d, latin2d = np.meshgrid(lonin,latin)
-            ax.set_title(str(int(TSnum))+"-"+TSout+' EDDI categories for '+month_name+" "+str(int(DD))+", "+YYYY, fontsize=9,weight='normal',y=1.0)
+            ax.set_title(TSnum.lstrip("0")+"-"+TSout+' EDDI categories for '+month_name+" "+str(int(DD))+", "+YYYY, fontsize=9,weight='normal',y=1.0)
             conf = ax.pcolormesh(lonin2d,latin2d,invar,transform=ccrs.PlateCarree(),norm=norm1,cmap=cmap1)
 
             #Create colorbar to match data. Colorbar will be placed automatically, but labels need to be positioned specifically
