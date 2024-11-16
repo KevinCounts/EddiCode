@@ -10,3 +10,4 @@ dependencies:
   - basemap
   - metpy
   - geopandas
+  - netcdf4
