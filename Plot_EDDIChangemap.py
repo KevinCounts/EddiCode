@@ -87,7 +87,7 @@ def plotgen(path,dir_list):
     #Now that the base figure has been created, loop through all data files and plot data
     #The plot data will get overwritten every loop to create a new plot, but colorbar needs to be cleared
     for file in dir_list:
-        if file.startswith("EDDI_") and file.endswith("20221023.asc"):
+        if file.startswith("EDDI_") and file.endswith(".asc"):
             infile = path + file
 
             #Get file data and set figure title accordingly
