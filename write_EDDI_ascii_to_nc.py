@@ -4,7 +4,7 @@ import os
 import numpy as np
 import netCDF4
 import datetime
-import pandas as pd
+import sys
 
 def ascii_to_netcdf(ascii_file, netcdf_file):
 
@@ -63,13 +63,10 @@ def ascii_to_netcdf(ascii_file, netcdf_file):
     nc.close()
 
 if __name__ == "__main__":
-    #input_directory = 'path/to/ascii/files'
-    #output_directory = 'path/to/output/netcdf'
-    input_directory = '/Users/kcounts/eddi/EDDI_data/'
-    output_directory = '/Users/kcounts/eddi/EDDI_data/netcdf'
+    input_directory = 'path/to/ascii/files/'
+    output_directory = 'path/to/output/netcdf/'
     #Read date from command line argument
-    #datestr=sys.argv[1]
-    datestr='20240606'
+    datestr=sys.argv[1]
     date = datetime.datetime.strptime(datestr,'%Y%m%d')
     # Process each ASCII file in the directory
     for filename in os.listdir(input_directory):
