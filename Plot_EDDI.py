@@ -17,7 +17,7 @@ import geopandas as gpd
 
 #List of all stakeholders to be iterated. Switch comment with next line to focus on one stakeholder
 stakeholders = ['ACF_DEWS','CBRFC','CC_DEWS','CN_DEWS','CO','DRI','DW','GCTrust','IMW_DEWS','MARFC','MCO','MN','MO','MORB_DEWS','MW_DEWS','NE_DEWS','NWS_WFO_ABQ_EPZ','NWS_WFO_EKA','NWS_WFO_PIH','NWS_WFO_RIW','NWS_WFO_TFX','NWS_WFO_UNR','PNW_DEWS','Rosebud','SE_DEWS','SOPL_DEWS','TWDB','UCRB_DEWS','USDM','USFS_CA','USFS_CA2','USFS_NWOR','USGS_NCCSC','WACLIM','WADOE','WindRiver','WWA']
-#stakeholders = ['PNW_DEWS']
+#stakeholders = ['USFS_NWOR']
 
 #Custom colormap declaration
 def customdivergecolormap(clevs):
@@ -69,7 +69,7 @@ def geoparam(datain_str = []):
 #Set the config for each stakeholder for unique differences
 #Each stakeholder has a region (latlon), shapefile config lists, and if counties should be displayed (blncounties)
 def getstakeholderconfig(stakeholder):
-    shapedir = ''
+    shapedir = '/Users/kcounts/eddi/shapefiles/'
     shapefiles = []
     color = []
     lw = []
@@ -187,9 +187,39 @@ def getstakeholderconfig(stakeholder):
             lw.append(.5)
         case 'USFS_NWOR':
             latlon = [235.5,239.75,43.25,46.75]
-            shapefiles.append(shapedir+'NorthOregonCoastRangeFDRA/NorthOregonCoastRangeFDRA.shp')
-            color.append('black')
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_CentralOregonCoastRange.shp')
+            color.append('blue')
             lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_EastMtHood.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_NorthCascadeFoothills.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_NorthOregonCoastRange.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_NorthwestOregon.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_SouthCascadeFoothills.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_TheDalles.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_WestMtHood.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_WesternWashington.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_Willamette.shp')
+            color.append('blue')
+            lw.append(.5)
+            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_WillametteValley.shp')
+            color.append('blue')
+            lw.append(.5)            
         case 'USGS_NCCSC':
             latlon = [243.5,270.5,36.5,49.5]
         case 'WACLIM':
@@ -302,7 +332,7 @@ def plotgen(latlon,shapefiles,color,lw,blncounties,path,dir_list,stakeholder):
     plt.close()
 
 def main():
-    path=''
+    path='/Users/kcounts/eddi/EDDI_data/'
     dir_list = os.listdir(path) # this needs to be the path where the EDDI*.asc file reside - if in that path already delete argument. May adjust argument to choose the ascii file I want.
     #Loop through all of the stakeholders and create base figure for each. Datafiles will be looped through later
     for stakeholder in stakeholders:
