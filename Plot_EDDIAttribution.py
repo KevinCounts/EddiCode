@@ -98,11 +98,11 @@ def plotgen(path,dir_list):
 
         ax.set_extent(latlon,crs=ccrs.PlateCarree())
         ocean = cfeature.NaturalEarthFeature(category='physical',name='ocean',scale='50m')
-        ax.add_feature(ocean,facecolor='lightgray',edgecolor='none',lw=1,zorder=15)
+        ax.add_feature(ocean,facecolor='lightgray',edgecolor='none',lw=1,zorder=2)
         lakes = cfeature.NaturalEarthFeature(category='physical',name='lakes',scale='110m')
-        ax.add_feature(lakes,facecolor='lightgray',edgecolor='none',lw=1,zorder=2)
-        ax.add_feature(cfeature.STATES,edgecolor='black',lw=0.5,zorder=3)
-        ax.add_feature(cfeature.BORDERS,edgecolor='black',lw=0.5,zorder=4)
+        ax.add_feature(lakes,facecolor='lightgray',edgecolor='none',lw=1,zorder=3)
+        ax.add_feature(cfeature.STATES,edgecolor='black',lw=0.5,zorder=4)
+        ax.add_feature(cfeature.BORDERS,edgecolor='black',lw=0.5,zorder=5)
         conf=ax.pcolormesh(lonin2d,latin2d,invar,transform=ccrs.PlateCarree(),norm=norm1,cmap=cmap1)
         axes.append(ax)
         x+=1

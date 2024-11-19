@@ -69,7 +69,7 @@ def geoparam(datain_str = []):
 #Set the config for each stakeholder for unique differences
 #Each stakeholder has a region (latlon), shapefile config lists, and if counties should be displayed (blncounties)
 def getstakeholderconfig(stakeholder):
-    shapedir = '/Users/kcounts/eddi/shapefiles/'
+    shapedir = ''
     shapefiles = []
     color = []
     lw = []
@@ -187,39 +187,12 @@ def getstakeholderconfig(stakeholder):
             lw.append(.5)
         case 'USFS_NWOR':
             latlon = [235.5,239.75,43.25,46.75]
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_CentralOregonCoastRange.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_EastMtHood.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_NorthCascadeFoothills.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_NorthOregonCoastRange.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_NorthwestOregon.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_SouthCascadeFoothills.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_TheDalles.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_WestMtHood.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_WesternWashington.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_Willamette.shp')
-            color.append('blue')
-            lw.append(.5)
-            shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/FDRA_WillametteValley.shp')
-            color.append('blue')
-            lw.append(.5)            
+            shape_list=os.listdir(shapedir+'MUSHRUSH_SeparateFDRAPolygons/')
+            for file in shape_list:
+                if file.endswith(".shp"):
+                    shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/'+file)
+                    color.append('blue')
+                    lw.append(.5)          
         case 'USGS_NCCSC':
             latlon = [243.5,270.5,36.5,49.5]
         case 'WACLIM':
@@ -264,14 +237,14 @@ def plotgen(latlon,shapefiles,color,lw,blncounties,path,dir_list,stakeholder):
     
     #Begin adding shapes to the map. Start with oceans, lakes, and borders
     ocean = cfeature.NaturalEarthFeature(category='physical',name='ocean',scale='50m')
-    ax.add_feature(ocean,facecolor='lightgray',edgecolor='none',lw=1,zorder=15)
+    ax.add_feature(ocean,facecolor='lightgray',edgecolor='none',lw=1,zorder=2)
     lakes = cfeature.NaturalEarthFeature(category='physical',name='lakes',scale='110m')
-    ax.add_feature(lakes,facecolor='lightgray',edgecolor='none',lw=1,zorder=2)
-    ax.add_feature(cfeature.STATES,edgecolor='black',lw=0.5,zorder=3)
-    ax.add_feature(cfeature.BORDERS,edgecolor='black',lw=0.5,zorder=4)
+    ax.add_feature(lakes,facecolor='lightgray',edgecolor='none',lw=1,zorder=3)
+    ax.add_feature(cfeature.STATES,edgecolor='black',lw=0.5,zorder=4)
+    ax.add_feature(cfeature.BORDERS,edgecolor='black',lw=0.5,zorder=5)
     #Check if counties should be displayed, then add
     if blncounties:
-        ax.add_feature(USCOUNTIES.with_scale('20m'),lw=.2,zorder = 5)
+        ax.add_feature(USCOUNTIES.with_scale('20m'),lw=.2,zorder = 6)
 
     #Create loop for unique shapefiles per stakeholder. x will be used to iterate through the list of files, colors, and lineweights
     #Not all shapefiles are in the correct coordinate system. Use geopandas to re-project them to WGS84 (same as EPSG 4326)
@@ -332,7 +305,7 @@ def plotgen(latlon,shapefiles,color,lw,blncounties,path,dir_list,stakeholder):
     plt.close()
 
 def main():
-    path='/Users/kcounts/eddi/EDDI_data/'
+    path=''
     dir_list = os.listdir(path) # this needs to be the path where the EDDI*.asc file reside - if in that path already delete argument. May adjust argument to choose the ascii file I want.
     #Loop through all of the stakeholders and create base figure for each. Datafiles will be looped through later
     for stakeholder in stakeholders:
