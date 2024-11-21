@@ -124,6 +124,7 @@ def plotgen(path,dir_list,time):
     cbar.outline.set_linewidth(0.25)
     ax.set_zorder(1)
     cbar.ax.set_xticklabels([-2.4,-2.1,-1.8,-1.5,-1.2,-0.9,-0.6,-0.3,0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3],fontsize=7)
+    cbar.ax.text(1,1.1,'Depth (mm)',fontsize=8,va='bottom',ha='right',color='black')
     #Save this figure and remove colorbar before moving on to next datafile
     plt.savefig(('../Attribution/' + outfile),dpi=500)
     #Close plot to free up some memory

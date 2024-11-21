@@ -24,7 +24,7 @@ def customdivergecolormap(clevs):
 def parsefile(infile):
     datestr= infile[-12:-4]
     date=datetime.datetime.strptime(datestr,'%Y%m%d')
-    EDDIdate = date
+    EDDIdate = date + datetime.timedelta(days=1)
     outfile = "ETrs_attribution_daily_" +EDDIdate.strftime('%Y%m%d')+".png"
     return outfile, EDDIdate
 
@@ -113,8 +113,8 @@ def plotgen(path,dir_list):
     cbar.outline.set_linewidth(0.25)
     ax.set_zorder(1)
     cbar.ax.set_xticklabels([-2.4,-2.1,-1.8,-1.5,-1.2,-0.9,-0.6,-0.3,0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3],fontsize=7)
+    cbar.ax.text(1,1.1,'Depth (mm)',fontsize=8,va='bottom',ha='right',color='black')
     #Save this figure and remove colorbar before moving on to next datafile
-    #fig.subplots_adjust(left=0, right=1, bottom=0, top=.95)
     plt.savefig(('../Attribution/' + outfile),dpi=500)
     #Close plot to free up some memory
     plt.close()
