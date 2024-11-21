@@ -24,7 +24,7 @@ def customdivergecolormap(clevs):
 def parsefile(infile):
     datestr= infile[-12:-4]
     date=datetime.datetime.strptime(datestr,'%Y%m%d')
-    EDDIdate = date
+    EDDIdate = date + datetime.timedelta(days=1)
     outfile = "ETrs_attribution_daily_" +EDDIdate.strftime('%Y%m%d')+".png"
     return outfile, EDDIdate
 
@@ -98,11 +98,11 @@ def plotgen(path,dir_list):
 
         ax.set_extent(latlon,crs=ccrs.PlateCarree())
         ocean = cfeature.NaturalEarthFeature(category='physical',name='ocean',scale='50m')
-        ax.add_feature(ocean,facecolor='lightgray',edgecolor='none',lw=1,zorder=15)
+        ax.add_feature(ocean,facecolor='lightgray',edgecolor='none',lw=1,zorder=2)
         lakes = cfeature.NaturalEarthFeature(category='physical',name='lakes',scale='110m')
-        ax.add_feature(lakes,facecolor='lightgray',edgecolor='none',lw=1,zorder=2)
-        ax.add_feature(cfeature.STATES,edgecolor='black',lw=0.5,zorder=3)
-        ax.add_feature(cfeature.BORDERS,edgecolor='black',lw=0.5,zorder=4)
+        ax.add_feature(lakes,facecolor='lightgray',edgecolor='none',lw=1,zorder=3)
+        ax.add_feature(cfeature.STATES,edgecolor='black',lw=0.5,zorder=4)
+        ax.add_feature(cfeature.BORDERS,edgecolor='black',lw=0.5,zorder=5)
         conf=ax.pcolormesh(lonin2d,latin2d,invar,transform=ccrs.PlateCarree(),norm=norm1,cmap=cmap1)
         axes.append(ax)
         x+=1
@@ -113,8 +113,8 @@ def plotgen(path,dir_list):
     cbar.outline.set_linewidth(0.25)
     ax.set_zorder(1)
     cbar.ax.set_xticklabels([-2.4,-2.1,-1.8,-1.5,-1.2,-0.9,-0.6,-0.3,0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3],fontsize=7)
+    cbar.ax.text(1,1.1,'Depth (mm)',fontsize=8,va='bottom',ha='right',color='black')
     #Save this figure and remove colorbar before moving on to next datafile
-    #fig.subplots_adjust(left=0, right=1, bottom=0, top=.95)
     plt.savefig(('../Attribution/' + outfile),dpi=500)
     #Close plot to free up some memory
     plt.close()
