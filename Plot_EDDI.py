@@ -187,12 +187,9 @@ def getstakeholderconfig(stakeholder):
             lw.append(.5)
         case 'USFS_NWOR':
             latlon = [235.5,241.75,43.25,46.75]
-            shape_list=os.listdir(shapedir+'MUSHRUSH_SeparateFDRAPolygons/')
-            for file in shape_list:
-                if file.endswith(".shp"):
-                    shapefiles.append(shapedir+'MUSHRUSH_SeparateFDRAPolygons/'+file)
-                    color.append('blue')
-                    lw.append(.5)         
+            shapefiles.append(shapedir+'NorthOregonCoastRangeFDRA/NorthOregonCoastRangeFDRA.shp')
+            color.append('black')
+            lw.append(.5)         
         case 'USGS_NCCSC':
             latlon = [243.5,270.5,36.5,49.5]
         case 'WACLIM':
