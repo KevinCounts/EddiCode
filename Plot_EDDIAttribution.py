@@ -24,7 +24,7 @@ def customdivergecolormap(clevs):
 def parsefile(infile):
     datestr= infile[-12:-4]
     date=datetime.datetime.strptime(datestr,'%Y%m%d')
-    EDDIdate = date + datetime.timedelta(days=1)
+    EDDIdate = date
     outfile = "ETrs_attribution_daily_" +EDDIdate.strftime('%Y%m%d')+".png"
     return outfile, EDDIdate
 
@@ -79,7 +79,7 @@ def plotgen(path,dir_list):
 
         if file.startswith("ETrs_anom"):
             ax = fig.add_subplot(231,projection=proj)
-            ax.set_title('ETrs Anom',fontsize=8)
+            ax.set_title('Total ETrs Anomaly',fontsize=8)
         elif file.startswith("Cont_SpHm"):
             ax = fig.add_subplot(232,projection=proj)
             ax.set_title('Specific Humidity',fontsize=8)
@@ -88,7 +88,7 @@ def plotgen(path,dir_list):
             ax.set_title('Temperature',fontsize=8)
         elif file.startswith("Cont_SWdn"):
             ax = fig.add_subplot(234,projection=proj)
-            ax.set_title('Short Wave Radiation',fontsize=8)
+            ax.set_title('Shortwave Radiation',fontsize=8)
         elif file.startswith("Cont_U_2m"):
             ax = fig.add_subplot(235,projection=proj)
             ax.set_title('Wind Speed',fontsize=8)

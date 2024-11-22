@@ -28,10 +28,10 @@ def parsefile(infile):
     date=datetime.datetime.strptime(datestr,'%Y%m%d')
     if TStype=='mn':
         TSout = 'month'
-        EDDIdate = date + datetime.timedelta(days=(30*int(TSnum)))
+        EDDIdate = date + datetime.timedelta(days=((30*int(TSnum))-1))
     elif TStype=='wk':
         TSout = 'week'
-        EDDIdate = date + datetime.timedelta(days=(7*int(TSnum)))
+        EDDIdate = date + datetime.timedelta(days=((7*int(TSnum))-1))
     else:
         print('error, timescale type not recognized')
     outfile = "ETrs_attribution_" +TSnum+TStype+'_'+EDDIdate.strftime('%Y%m%d')+".png"
@@ -81,7 +81,7 @@ def plotgen(path,dir_list,time):
     for file in dir_list:
         if file.startswith('Avg_ETo_anomaly_'+time):
             ax = fig.add_subplot(231,projection=proj)
-            ax.set_title('ETrs Anom',fontsize=8)
+            ax.set_title('Total ETrs Anomaly',fontsize=8)
         elif file.startswith("Avgcont_SpHm_"+time):
             ax = fig.add_subplot(232,projection=proj)
             ax.set_title('Specific Humidity',fontsize=8)
@@ -90,7 +90,7 @@ def plotgen(path,dir_list,time):
             ax.set_title('Temperature',fontsize=8)
         elif file.startswith("Avgcont_SWdn_"+time):
             ax = fig.add_subplot(234,projection=proj)
-            ax.set_title('Short Wave Radiation',fontsize=8)
+            ax.set_title('Shortwave Radiation',fontsize=8)
         elif file.startswith("Avgcont_U_2m_"+time):
             ax = fig.add_subplot(235,projection=proj)
             ax.set_title('Wind Speed',fontsize=8)
