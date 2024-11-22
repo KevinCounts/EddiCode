@@ -79,7 +79,7 @@ def plotgen(path,dir_list):
 
         if file.startswith("ETrs_anom"):
             ax = fig.add_subplot(231,projection=proj)
-            ax.set_title('ETrs Anom',fontsize=8)
+            ax.set_title('Total ETrs Anomaly',fontsize=8)
         elif file.startswith("Cont_SpHm"):
             ax = fig.add_subplot(232,projection=proj)
             ax.set_title('Specific Humidity',fontsize=8)
@@ -88,7 +88,7 @@ def plotgen(path,dir_list):
             ax.set_title('Temperature',fontsize=8)
         elif file.startswith("Cont_SWdn"):
             ax = fig.add_subplot(234,projection=proj)
-            ax.set_title('Short Wave Radiation',fontsize=8)
+            ax.set_title('Shortwave Radiation',fontsize=8)
         elif file.startswith("Cont_U_2m"):
             ax = fig.add_subplot(235,projection=proj)
             ax.set_title('Wind Speed',fontsize=8)
@@ -120,7 +120,7 @@ def plotgen(path,dir_list):
     plt.close()
 
 def main():
-    path=''
+    path='/Users/kcounts/eddi/DailyCont_20240613/'
     dir_list = os.listdir(path) # this needs to be the path where the EDDI*.asc file reside - if in that path already delete argument. May adjust argument to choose the ascii file I want.
     plotgen(path,dir_list)
 
