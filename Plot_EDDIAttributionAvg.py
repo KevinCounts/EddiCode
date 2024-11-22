@@ -131,7 +131,7 @@ def plotgen(path,dir_list,time):
     plt.close()
 
 def main():
-    path='/Users/kcounts/eddi/NetCont_20240613/'
+    path=''
     dir_list = os.listdir(path) # this needs to be the path where the EDDI*.asc file reside - if in that path already delete argument. May adjust argument to choose the ascii file I want.
     times= ['01mn','01wk','02mn','02wk','03mn','06m','12mn']
     x=0
