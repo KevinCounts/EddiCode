@@ -28,10 +28,10 @@ def parsefile(infile):
     date=datetime.datetime.strptime(datestr,'%Y%m%d')
     if TStype=='mn':
         TSout = 'month'
-        EDDIdate = date + datetime.timedelta(days=(30*int(TSnum)))
+        EDDIdate = date + datetime.timedelta(days=((30*int(TSnum))-1))
     elif TStype=='wk':
         TSout = 'week'
-        EDDIdate = date + datetime.timedelta(days=(7*int(TSnum)))
+        EDDIdate = date + datetime.timedelta(days=((7*int(TSnum))-1))
     else:
         print('error, timescale type not recognized')
     outfile = "ETrs_attribution_" +TSnum+TStype+'_'+EDDIdate.strftime('%Y%m%d')+".png"
@@ -131,7 +131,7 @@ def plotgen(path,dir_list,time):
     plt.close()
 
 def main():
-    path=''
+    path='/Users/kcounts/eddi/NetCont_20240613/'
     dir_list = os.listdir(path) # this needs to be the path where the EDDI*.asc file reside - if in that path already delete argument. May adjust argument to choose the ascii file I want.
     times= ['01mn','01wk','02mn','02wk','03mn','06m','12mn']
     x=0

@@ -24,7 +24,7 @@ def customdivergecolormap(clevs):
 def parsefile(infile):
     datestr= infile[-12:-4]
     date=datetime.datetime.strptime(datestr,'%Y%m%d')
-    EDDIdate = date + datetime.timedelta(days=1)
+    EDDIdate = date
     outfile = "ETrs_attribution_daily_" +EDDIdate.strftime('%Y%m%d')+".png"
     return outfile, EDDIdate
 
