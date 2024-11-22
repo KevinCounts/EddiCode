@@ -120,7 +120,7 @@ def plotgen(path,dir_list):
     plt.close()
 
 def main():
-    path='/Users/kcounts/eddi/DailyCont_20240613/'
+    path=''
     dir_list = os.listdir(path) # this needs to be the path where the EDDI*.asc file reside - if in that path already delete argument. May adjust argument to choose the ascii file I want.
     plotgen(path,dir_list)
 
