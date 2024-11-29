@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE metadata SYSTEM "http://www.fgdc.gov/metadata/fgdc-std-001-1998.dtd">
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Washington State Department of Ecology</origin>
+				<pubdate>20000505</pubdate>
+				<title Sync="TRUE">WRIA_poly</title>
+				<edition>1</edition>
+				<geoform Sync="TRUE">vector digital data</geoform>
+				<serinfo>
+					<sername>WRIA</sername>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Olympia, Washington</pubplace>
+					<publish>Washington State Department of Ecology</publish>
+				</pubinfo>
+				<onlink>\\ecyfllcyadp01\data83\state\hydro\Hydrology.gdb</onlink>
+				<onlink>\\ecyfllcyadp01\data83\state\hydro\Hydrology.gdb</onlink>
+				<ftname Sync="TRUE">WRIA_poly</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>Water Resource Inventory Areas (WRIA) for Washington State at 1:24,000 scale.  WRIAs were formalized under WAC 173-500-040 and authorized under the Water Resources Act of 1971, RCW 90.54. Ecology was given the responsibility for the development and management of these administrative and planning boundaries. These boundaries represent the administrative under pinning of this agency's business activities. The original WRIA boundary agreements and judgments were reached jointly by Washington's natural resource agencies (Ecology, Natural Resources, Fish and Wildlife) in 1970.</abstract>
+			<purpose>To create a WRIA coverage at a scale of 1:24,000 through the updating of two "like" data sets from different sources.  Additionally, to address discrepancies found between the two coverages and determine a "best fit" line through several stages of visual analysis.  The development process identified several major objectives as reasoning to update the digital data coverage:  To improve the spatial resolution of the data set, To align the WRIA boundaries with 1:24,000 scale hydrology and topography data, To insure of the alignment of the WRIA boundaries to existing county and state boundaries where appropriate, and To have one reconciled set of administrative watershed boundaries (i.e. WADNR's boundaries to nest within the WRIA boundaries)</purpose>
+			<supplinf>Developed with funding from the Department of Ecology's Information Integration Project (IIP).  Developed in cooperation with the Department of Natural Resources - Forest Practices Division.</supplinf>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>20000403</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>Current to the most recent editions of USGS DRGs at 1:24,000 scale and the Data 96 1:24,000 scale hydrology layer.  Additional reference can be made to the 1999 edition of the statewide POCA coverage (county and sections boundaries).</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-124.926702</westbc>
+				<eastbc Sync="TRUE">-116.708501</eastbc>
+				<northbc Sync="TRUE">49.049340</northbc>
+				<southbc Sync="TRUE">45.481139</southbc>
+			</bounding>
+			<lboundng><leftbc Sync="TRUE">576751.628624</leftbc><rightbc Sync="TRUE">2551197.698753</rightbc><bottombc Sync="TRUE">81877.320945</bottombc><topbc Sync="TRUE">1355595.418845</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>basin</themekey>
+				<themekey>drainage</themekey>
+				<themekey>water</themekey>
+				<themekey>watershed</themekey>
+				<themekey>WRIA</themekey>
+				<themekey>boundary</themekey>
+			</theme>
+			<place>
+				<placekt>None</placekt>
+				<placekey>northwest</placekey>
+				<placekey>Pacific</placekey>
+				<placekey>state</placekey>
+				<placekey>Washington</placekey>
+			</place>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>http://www.ecy.wa.gov/copyright.html</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Washington State Department of Ecology</cntorg>
+					<cntper>Richard Kim</cntper>
+				</cntorgp>
+				<cntpos>Spatial Database Administrator</cntpos>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>PO Box 47600</address>
+					<city>Olympia</city>
+					<state>Washington</state>
+					<postal>98504-7600</postal>
+					<country>United States of America</country>
+				</cntaddr>
+				<cntaddr>
+					<addrtype>physical address</addrtype>
+					<address>300 Desmond Drive</address>
+					<city>Olympia</city>
+					<state>Washington</state>
+					<postal>98503</postal>
+					<country>United States of America</country>
+				</cntaddr>
+				<cntvoice>(360) 407-6121</cntvoice>
+				<cntfax>(360) 407-6493</cntfax>
+				<cntemail>rkim461@ecy.wa.gov</cntemail>
+				<hours>8:00am-4:30pm PDT</hours>
+				<cntinst>Electronic mail, telephone, or fax</cntinst>
+			</cntinfo>
+		</ptcontac>
+		<browse>
+			<browsen>http://www.ecy.wa.gov/services/gis/data/hydro/wria.gif</browsen>
+			<browsed>Simple image</browsed>
+			<browset>GIF</browset>
+		</browse>
+		<datacred>Washington Department of Ecology, Washington Department of Natural Resources</datacred>
+		<secinfo>
+			<secclass>Unclassified</secclass>
+		</secinfo>
+		<native Sync="TRUE">Microsoft Windows 2000 Version 5.2 (Build 3790) Service Pack 2; ESRI ArcCatalog 9.3.1.4000</native>
+		<crossref>
+			<citeinfo>
+				<origin>Washington State Department of Ecology</origin>
+				<pubdate>1999</pubdate>
+				<title>Washington State Counties</title>
+				<edition>1</edition>
+				<geoform>map</geoform>
+				<serinfo>
+					<sername>Counties</sername>
+					<issue>Washington State</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Olympia, Washington</pubplace>
+					<publish>Washington State Department of Ecology</publish>
+				</pubinfo>
+				<onlink>http://www.ecy.wa.gov/services/gis/data/data.htm#c</onlink>
+			</citeinfo>
+		</crossref>
+		<crossref>
+			<citeinfo>
+				<origin>Washington State Department of Ecology</origin>
+				<pubdate>19980316</pubdate>
+				<title>Water Resource Inventory Area (WRIA) - 100k</title>
+				<edition>1</edition>
+				<geoform>map</geoform>
+				<serinfo>
+					<sername>WRIA 100k scale</sername>
+					<issue>Water Resource Inventory Area Boundaries</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Olympia, Washington</pubplace>
+					<publish>Washington Department Ecology</publish>
+				</pubinfo>
+			</citeinfo>
+		</crossref>
+		<crossref>
+			<citeinfo>
+				<origin>U.S. Geological Survey</origin>
+				<pubdate>1996</pubdate>
+				<title>USGS Digital Raster Graphics (DRG)</title>
+				<edition>1.0</edition>
+				<geoform>map</geoform>
+				<serinfo>
+					<sername>USGS Digital Raster Graphics</sername>
+					<issue>Digital Raster Graphics (DRGs) are scanned color images of USGS topological maps.</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Sioux Falls, South Dakota</pubplace>
+					<publish>U.S. Geological Survey, EROS Data Center</publish>
+				</pubinfo>
+				<othercit>Earth Science Information Centers (ESIC) offer nationwide information and sales service for USGS map products and earth science publications. For additional information, contact any USGS Earth Science Information Center (ESIC), or call 1-800-USA-MAPS.</othercit>
+				<onlink>http://edcwww.cr.usgs.gov/</onlink>
+			</citeinfo>
+		</crossref>
+		<natvform Sync="TRUE">Shapefile</natvform></idinfo>
+	<dataqual>
+		<logic>Polygon and chain-node topology present.  All errors incurred during editing procedures were corrected with ArcEdit under ARC/INFO version 7.2.1 using a fuzzy tolerance of 196.8, an edit tolerance of 100.0, and a snap tolerance of 100.0.  All arc overshoots, undershoots, duplicate arcs, and arc intersections were corrected.  This resulted in a topologically clean coverage with all arcs intersecting and snapped at nodes and each WRIA unit comprising a single polygon.</logic>
+		<complete>Data set is complete</complete>
+		<posacc>
+			<horizpa>
+				<horizpar>Accuracy of WRIA boundary lines are a direct reflection of their input scale, 1:24,000.  The WRIA data set was derived from a base layer of WAU units courtesy of DNR.  The WAU boundaries were input at a scale of 1:24,000 and represent accuracy standards for that scale.  Additionally WRIA boundaries were evaluated in areas of discrepancy.  In these identified areas, topographical, hydrological, and administrative boundary information was utilized to make an informed decision about the correct position of the boundary.  All analysis decisions were made with background images of USGS DRG 1:24,000 scale quad images to provide a consistent and uniform framework to aid in any adjustment or editing procedures.</horizpar>
+			</horizpa>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>U.S. Geological Survey</origin>
+						<pubdate>1996</pubdate>
+						<title>USGS Digital Raster Graphics (DRG)</title>
+						<edition>1.0</edition>
+						<geoform>map</geoform>
+						<serinfo>
+							<sername>USGS Digital Raster Graphics</sername>
+							<issue>Digital Raster Graphics (DRGs) are scanned color images of USGS topological maps.</issue>
+						</serinfo>
+						<pubinfo>
+							<pubplace>Sioux Falls, South Dakota</pubplace>
+							<publish>U.S. Geological Survey, EROS Data Center</publish>
+						</pubinfo>
+						<othercit>Earth Science Information Centers (ESIC) offer nationwide information and sales service for USGS map products and earth science publications. For additional information, contact any USGS Earth Science Information Center (ESIC), or call 1-800-USA-MAPS.</othercit>
+						<onlink>http://edcwww.cr.usgs.gov/</onlink>
+					</citeinfo>
+				</srccite>
+				<srcscale>24000</srcscale>
+				<typesrc>paper</typesrc>
+				<srctime>
+					<srccurr>ground condition</srccurr>
+				</srctime>
+			</srcinfo>
+			<procstep>
+				<procdesc>1.  Copied WAU coverage to project directory and dissolved out WRIA polygons by WRIA_NR.
+2.  Overlaid WRIA100K and dissolved WAU coverage to create discrepancy polygons.
+3.  Created point discrepancy coverage.
+4.  Applied selection criteria (polys &gt; 35 acres, points &gt; 750 feet) to discrepancy coverages.
+5.  Intersected 24K quadrangle and section-township-range coverage with polygon and point discrepancy coverages.
+6.  Attached attributes of intersected coverages and performed ranking procedure to prioritize the results.
+7.  Mapped each polygon discrepancy by quadrangle and grouped each map by its associated WRIA basin.
+8.  All WRIA maps were assembled into books representing each WRIA and its discrepancies.
+9.  Microsoft Access database developed to help manage and report project data (editing, analysis decisions, comments).
+10.  Visual analysis of each discrepancy performed using the map books (stage 1).
+11.  Additional analysis performed using USGS DRGs at 1:24,000 scale as well as, in house hydrology and  administrative boundary data sets (stage 2).
+12.  Project edits carried out based on the two stages of analysis.
+
+The project was revisited in March of 2000 using two additional methods of analysis. First, the WRIA24K boundaries were overlaid with statewide 24K scale hydrology coverage to check for stream crossings. A 10 foot buffer was used on either side of the WRIA boundary to limit the size of the output data set. Stream crossings were then evaluated for relevance. Additionally, a general overview of the WRIA boundaries as done by examining each WRIA again the 24K scale USGS DRGs. This was done as an additional check for unnecessary stream crossings and drainage errors.</procdesc>
+				<procdate>20000403</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Washington State Department of Ecology</cntorg>
+							<cntper>Mike Woodall</cntper>
+						</cntorgp>
+						<cntpos>GIS Analyst/Cartographer</cntpos>
+						<cntaddr>
+							<addrtype>mailing address</addrtype>
+							<address>PO Box 47600</address>
+							<city>Olympia</city>
+							<state>Washington</state>
+							<postal>98504-7600</postal>
+							<country>United States of America</country>
+						</cntaddr>
+						<cntvoice>(360) 407-6088</cntvoice>
+						<cntemail>miwo461@ecy.wa.gov</cntemail>
+						<hours>6am-3pm, M-F</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Boundary update area, WRIA's 8-9 at Rock Creek. Change drainage area of Rock Creek to flow north into Cedar River from south into Green River. Areas affected include protions of T21N, R06E and R07E and T22N R06E, R07E and R08E east of the cities Maple Valley and Black Diamond. New boundary digitized from King Co. Lidar DEM and 1:24,000 stream flowline data.</procdesc>
+				<procdate>20111229</procdate>
+				<proccont>
+					<cntinfo>
+						<cntperp>
+							<cntper>Mike Woodall</cntper>
+							<cntorg>Washington State Department of Ecology</cntorg>
+						</cntperp>
+						<cntpos>GIS Analyst/Cartographer</cntpos>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>M:\ADSGIS\mike\support\wria-edit\WRIA_poly.xml</srcused>
+				<procdate>20111229</procdate>
+				<proctime>08565700</proctime>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">M:\ADSGIS\SDBA\metadata\WRIA_poly.xml</srcused><procdate Sync="TRUE">20111230</procdate><proctime Sync="TRUE">09501600</proctime></procstep></lineage>
+		<cloud>Unknown</cloud>
+	</dataqual>
+	<spdoinfo>
+		<direct Sync="TRUE">Vector</direct>
+		<ptvctinf>
+			<sdtsterm Name="WRIA_poly">
+				<sdtstype Sync="TRUE">G-polygon</sdtstype>
+				<ptvctcnt Sync="TRUE">62</ptvctcnt>
+			</sdtsterm>
+			<sdtsterm>
+				<sdtstype>Label point</sdtstype>
+				<ptvctcnt>62</ptvctcnt>
+			</sdtsterm>
+			<sdtsterm>
+				<sdtstype>GT-polygon composed of chains</sdtstype>
+				<ptvctcnt>62</ptvctcnt>
+			</sdtsterm>
+			<sdtsterm>
+				<sdtstype>Point</sdtstype>
+				<ptvctcnt>0</ptvctcnt>
+			</sdtsterm>
+			<sdtsterm>
+				<sdtstype>Label point</sdtstype>
+				<ptvctcnt>250</ptvctcnt>
+			</sdtsterm>
+			<esriterm Name="WRIA_poly"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom Sync="TRUE">Polygon</efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">62</efeacnt><spindex Sync="TRUE">TRUE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance Sync="TRUE">coordinate pair</plance>
+					<coordrep>
+						<absres Sync="TRUE">0.000000</absres>
+						<ordres Sync="TRUE">0.000000</ordres>
+					</coordrep>
+					<plandu Sync="TRUE">survey feet</plandu>
+				</planci>
+				<mapproj><mapprojn Sync="TRUE">Lambert Conformal Conic</mapprojn><lambertc><stdparll Sync="TRUE">45.833333</stdparll><stdparll Sync="TRUE">47.333333</stdparll><longcm Sync="TRUE">-120.500000</longcm><latprjo Sync="TRUE">45.333333</latprjo><feast Sync="TRUE">1640416.666667</feast><fnorth Sync="TRUE">0.000000</fnorth></lambertc></mapproj></planar>
+			<geodetic>
+				<horizdn Sync="TRUE">D_North_American_1983_HARN</horizdn>
+				<ellips Sync="TRUE">Geodetic Reference System 80</ellips>
+				<semiaxis Sync="TRUE">6378137.000000</semiaxis>
+				<denflat Sync="TRUE">298.257222</denflat>
+			</geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_North_American_1983_HARN</geogcsn><projcsn Sync="TRUE">NAD_1983_HARN_StatePlane_Washington_South_FIPS_4602_Feet</projcsn></cordsysn></horizsys>
+	</spref>
+	<eainfo>
+		<detailed Name="WRIA_poly">
+			<enttyp>
+				<enttypl Sync="TRUE">WRIA_poly</enttypl>
+				<enttypd>Arc Attribute Table</enttypd>
+				<enttypds>ArcInfo</enttypds>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">62</enttypc></enttyp>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr>
+				<attrlabl>Shape</attrlabl>
+				<attrdef>Feature geometry.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl>WRIA_ID</attrlabl>
+				<attrdef>Internal feature number.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attalias Sync="TRUE">WRIA_ID</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">9</attwidth></attr>
+			<attr>
+				<attrlabl>WRIA_NR</attrlabl>
+				<attrdef>WRIA Number (1-62)</attrdef>
+				<attrdefs>Ecology</attrdefs>
+				<attalias Sync="TRUE">WRIA_NR</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr><attrlabl Sync="TRUE">WRIA_AREA_</attrlabl><attalias Sync="TRUE">WRIA_AREA_</attalias><attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><atnumdec Sync="TRUE">11</atnumdec></attr><attr>
+				<attrlabl>WRIA_NM</attrlabl>
+				<attrdef>WRIA Name</attrdef>
+				<attrdefs>Ecology</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>Nooksack</edomv>
+						<edomvd>WRIA 1</edomvd>
+					</edom>
+					<edom>
+						<edomv>San Juan</edomv>
+						<edomvd>WRIA 2</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Skagit - Samish</edomv>
+						<edomvd>WRIA 3</edomvd>
+					</edom>
+					<edom>
+						<edomv>Upper Skagit</edomv>
+						<edomvd>WRIA 4</edomvd>
+					</edom>
+					<edom>
+						<edomv>Stillaguamish</edomv>
+						<edomvd>WRIA 5</edomvd>
+					</edom>
+					<edom>
+						<edomv>Island</edomv>
+						<edomvd>WRIA 6</edomvd>
+					</edom>
+					<edom>
+						<edomv>Snohomish</edomv>
+						<edomvd>WRIA 7</edomvd>
+					</edom>
+					<edom>
+						<edomv>Cedar - Sammamish</edomv>
+						<edomvd>WRIA 8</edomvd>
+					</edom>
+					<edom>
+						<edomv>Duwamish - Green</edomv>
+						<edomvd>WRIA 8</edomvd>
+					</edom>
+					<edom>
+						<edomv>Puyallup - White</edomv>
+						<edomvd>WRIA 10</edomvd>
+					</edom>
+					<edom>
+						<edomv>Nisqually</edomv>
+						<edomvd>WRIA 11</edomvd>
+					</edom>
+					<edom>
+						<edomv>Chambers - Clover</edomv>
+						<edomvd>WRIA 12</edomvd>
+					</edom>
+					<edom>
+						<edomv>Deschutes</edomv>
+						<edomvd>WRIA 13</edomvd>
+					</edom>
+					<edom>
+						<edomv>Kennedy - Goldsborough</edomv>
+						<edomvd>WRIA 14</edomvd>
+					</edom>
+					<edom>
+						<edomv>Kitsap</edomv>
+						<edomvd>WRIA 15</edomvd>
+					</edom>
+					<edom>
+						<edomv>Skokomish - Dosewallips</edomv>
+						<edomvd>WRIA 15</edomvd>
+					</edom>
+					<edom>
+						<edomv>Quilcene - Snow</edomv>
+						<edomvd>WRIA 17</edomvd>
+					</edom>
+					<edom>
+						<edomv>Elwha - Dungeness</edomv>
+						<edomvd>WRIA 18</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lyre - Hoko</edomv>
+						<edomvd>WRIA 19</edomvd>
+					</edom>
+					<edom>
+						<edomv>Soleduc</edomv>
+						<edomvd>WRIA 20</edomvd>
+					</edom>
+					<edom>
+						<edomv>Queets - Quinault</edomv>
+						<edomvd>WRIA 21</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Chehalis</edomv>
+						<edomvd>WRIA 22</edomvd>
+					</edom>
+					<edom>
+						<edomv>Upper Chehalis</edomv>
+						<edomvd>WRIA 23</edomvd>
+					</edom>
+					<edom>
+						<edomv>Willapa</edomv>
+						<edomvd>WRIA 24</edomvd>
+					</edom>
+					<edom>
+						<edomv>Grays - Elochoman</edomv>
+						<edomvd>WRIA 25</edomvd>
+					</edom>
+					<edom>
+						<edomv>Cowlitz</edomv>
+						<edomvd>WRIA 26</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lewis</edomv>
+						<edomvd>WRIA 27</edomvd>
+					</edom>
+					<edom>
+						<edomv>Salmon - Washougal</edomv>
+						<edomvd>WRIA 28</edomvd>
+					</edom>
+					<edom>
+						<edomv>Wind - White Salmon</edomv>
+						<edomvd>WRIA 29</edomvd>
+					</edom>
+					<edom>
+						<edomv>Klickitat</edomv>
+						<edomvd>WRIA 30</edomvd>
+					</edom>
+					<edom>
+						<edomv>Rock - Glade</edomv>
+						<edomvd>WRIA 31</edomvd>
+					</edom>
+					<edom>
+						<edomv>Walla Walla</edomv>
+						<edomvd>WRIA 32</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Snake</edomv>
+						<edomvd>WRIA 33</edomvd>
+					</edom>
+					<edom>
+						<edomv>Palouse</edomv>
+						<edomvd>WRIA 34</edomvd>
+					</edom>
+					<edom>
+						<edomv>Middle Snake</edomv>
+						<edomvd>WRIA35</edomvd>
+					</edom>
+					<edom>
+						<edomv>Esquatzel Coulee</edomv>
+						<edomvd>WRIA 36</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Yakima</edomv>
+						<edomvd>WRIA 37</edomvd>
+					</edom>
+					<edom>
+						<edomv>Naches</edomv>
+						<edomvd>WRIA 38</edomvd>
+					</edom>
+					<edom>
+						<edomv>Upper Yakima</edomv>
+						<edomvd>WRIA 39</edomvd>
+					</edom>
+					<edom>
+						<edomv>Alkali - Squilchuck</edomv>
+						<edomvd>WRIA 40</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Crab</edomv>
+						<edomvd>WRIA 41</edomvd>
+					</edom>
+					<edom>
+						<edomv>Grand Coulee</edomv>
+						<edomvd>WRIA 42</edomvd>
+					</edom>
+					<edom>
+						<edomv>Upper Crab - Wilson</edomv>
+						<edomvd>WRIA 43</edomvd>
+					</edom>
+					<edom>
+						<edomv>Moses Coulee</edomv>
+						<edomvd>WRIA 44</edomvd>
+					</edom>
+					<edom>
+						<edomv>Wenatchee</edomv>
+						<edomvd>WRIA 45</edomvd>
+					</edom>
+					<edom>
+						<edomv>Entiat</edomv>
+						<edomvd>WRIA 46</edomvd>
+					</edom>
+					<edom>
+						<edomv>Chelan</edomv>
+						<edomvd>WRIA 47</edomvd>
+					</edom>
+					<edom>
+						<edomv>Methow</edomv>
+						<edomvd>WRIA 48</edomvd>
+					</edom>
+					<edom>
+						<edomv>Okanogan</edomv>
+						<edomvd>WRIA 49</edomvd>
+					</edom>
+					<edom>
+						<edomv>Foster</edomv>
+						<edomvd>WRIA 50</edomvd>
+					</edom>
+					<edom>
+						<edomv>Nespelem</edomv>
+						<edomvd>WRIA 51</edomvd>
+					</edom>
+					<edom>
+						<edomv>Sanpoil</edomv>
+						<edomvd>WRIA 52</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Lake Roosevelt</edomv>
+						<edomvd>WRIA 53</edomvd>
+					</edom>
+					<edom>
+						<edomv>Lower Spokane</edomv>
+						<edomvd>WRIA 54</edomvd>
+					</edom>
+					<edom>
+						<edomv>Little Spokane</edomv>
+						<edomvd>WRIA 55</edomvd>
+					</edom>
+					<edom>
+						<edomv>Hangman</edomv>
+						<edomvd>WRIA 56</edomvd>
+					</edom>
+					<edom>
+						<edomv>Middle Spokane</edomv>
+						<edomvd>WRIA 57</edomvd>
+					</edom>
+					<edom>
+						<edomv>Middle Lake Roosevelt</edomv>
+						<edomvd>WRIA 58</edomvd>
+					</edom>
+					<edom>
+						<edomv>Colville</edomv>
+						<edomvd>WRIA 59</edomvd>
+					</edom>
+					<edom>
+						<edomv>Kettle</edomv>
+						<edomvd>WRIA 60</edomvd>
+					</edom>
+					<edom>
+						<edomv>Upper Lake Roosevelt</edomv>
+						<edomvd>WRIA 61</edomvd>
+					</edom>
+					<edom>
+						<edomv>Pend Oreille</edomv>
+						<edomvd>WRIA 62</edomvd>
+					</edom>
+				</attrdomv>
+				<attalias Sync="TRUE">WRIA_NM</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth></attr>
+			<attr><attrlabl Sync="TRUE">Shape_Leng</attrlabl><attalias Sync="TRUE">Shape_Leng</attalias><attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><atnumdec Sync="TRUE">11</atnumdec></attr><attr>
+				<attrlabl>Shape_Area</attrlabl>
+				<attrdef>Area of feature in internal units squared.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Positive real numbers that are automatically generated.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">Shape_Area</attalias><attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><atnumdec Sync="TRUE">11</atnumdec></attr>
+		</detailed>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Washington State Department of Ecology</cntorg>
+					<cntper>Rich Kim</cntper>
+				</cntorgp>
+				<cntpos>Spatial Database Administrator</cntpos>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>P.O. Box 47600</address>
+					<city>Olympia</city>
+					<state>Washington</state>
+					<postal>98504-7600</postal>
+					<country>United States of America</country>
+				</cntaddr>
+				<cntaddr>
+					<addrtype>physical address</addrtype>
+					<address>300 Desmond Drive</address>
+					<city>Olympia</city>
+					<state>Washington</state>
+					<postal>98503</postal>
+					<country>United States of America</country>
+				</cntaddr>
+				<cntvoice>(360) 407-6121</cntvoice>
+				<cntfax>(360) 407-6493</cntfax>
+				<cntemail>rkim461@ecy.wa.gov</cntemail>
+				<hours>8:00am - 5:00pm</hours>
+			</cntinfo>
+		</distrib>
+		<resdesc>ArcInfo data layer</resdesc>
+		<distliab>The Washington State Department of Ecology provides these geographic data "AS IS" WITHOUT A WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR USE, AND/OR NON-INFRINGEMENT.</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>Shapefile</formname>
+					<formvern>9.3.1</formvern>
+					<formspec>SHP</formspec>
+					<filedec>ZIP</filedec>
+					<transize>2.342</transize>
+					<dssize Sync="TRUE">4.402</dssize></digtinfo>
+				<digtopt>
+					<onlinopt>
+						<accinstr>http://www.ecy.wa.gov/services/gis/data/data.htm#w</accinstr>
+					</onlinopt>
+				</digtopt>
+				<digtopt>
+					<offoptn>
+						<offmedia>CD-ROM</offmedia>
+					</offoptn>
+				</digtopt>
+			</digform>
+			<fees>$50/hour, one hour minimum.</fees>
+			<ordering>Digital data order form is available at http://www.ecy.wa.gov/services/gis/data/digital.doc.</ordering>
+			<turnarnd>One week</turnarnd>
+		</stdorder>
+		<custom>Available in other formats, such as CD-ROM and 8mm tape by request. Please contact:  GIS Technical Services, Washington State Department of Ecology.</custom>
+		<techpreq>Ability to use ArcInfo export format file</techpreq>
+		<availabl>
+			<timeinfo>
+				<sngdate>
+				</sngdate>
+			</timeinfo>
+		</availabl>
+	</distinfo>
+	<metainfo>
+		<metd Sync="TRUE">20111230</metd>
+		<metrd>20000403</metrd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Washington State Department of Ecology</cntorg>
+					<cntper>Rich Kim</cntper>
+				</cntorgp>
+				<cntpos>Spatial Database Administrator</cntpos>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>P.O. Box 47600</address>
+					<city>Olympia</city>
+					<state>Washington</state>
+					<postal>98504-7600</postal>
+					<country>United States of America</country>
+				</cntaddr>
+				<cntaddr>
+					<addrtype>physical address</addrtype>
+					<address>300 Desmond Drive</address>
+					<city>Olympia</city>
+					<state>Washington</state>
+					<postal>98503</postal>
+					<country>United States of America</country>
+				</cntaddr>
+				<cntvoice>(360) 407-6121</cntvoice>
+				<cntfax>(360) 407-6493</cntfax>
+				<cntemail>rkim461@ecy.wa.gov</cntemail>
+				<hours>8:00am - 5:00pm</hours>
+			</cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<metac>None</metac>
+		<metuc>None</metuc>
+		<metsi>
+			<metsc>Unclassified</metsc>
+		</metsi>
+		<langmeta Sync="TRUE">en</langmeta><metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri><MetaID>{B3A8B455-D225-49ED-8671-9F7B85F94439}</MetaID><CreaDate>20111230</CreaDate><CreaTime>09501600</CreaTime><SyncOnce>FALSE</SyncOnce><SyncDate>20111230</SyncDate><SyncTime>10074800</SyncTime><ModDate>20111230</ModDate><ModTime>10082000</ModTime></Esri><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows 2000 Version 5.2 (Build 3790) Service Pack 2; ESRI ArcCatalog 9.3.1.4000</envirDesc><dataLang><languageCode Sync="TRUE" value="en"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">WRIA_poly</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd></spatRpType><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">576751.628624</westBL><eastBL Sync="TRUE">2551197.698753</eastBL><northBL Sync="TRUE">1355595.418845</northBL><southBL Sync="TRUE">81877.320945</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-124.926702</westBL><eastBL Sync="TRUE">-116.708501</eastBL><northBL Sync="TRUE">49.04934</northBL><southBL Sync="TRUE">45.481139</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox></dataIdInfo><mdLang><languageCode Sync="TRUE" value="en"></languageCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><orDesc Sync="TRUE">002</orDesc><linkage Sync="TRUE">file://\\ECYFLLCYADP01\export1\ADSGIS\SDBA\export\shapefiles\WRIA_poly.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc><transSize Sync="TRUE">4.402</transSize></distorTran><distorFormat><formatName Sync="TRUE">Shapefile</formatName></distorFormat></distributor></distInfo><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE">NAD_1983_HARN_StatePlane_Washington_South_FIPS_4602_Feet</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><topLvl><TopoLevCd Sync="TRUE" value="001"></TopoLevCd></topLvl><geometObjs Name="WRIA_poly"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">62</geoObjCnt></geometObjs></VectSpatRep></spatRepInfo><mdDateSt Sync="TRUE">20111230</mdDateSt></metadata>
