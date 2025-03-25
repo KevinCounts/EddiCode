@@ -13,11 +13,9 @@ def main():
     datestr=sys.argv[1]
     date = datetime.datetime.strptime(datestr,'%Y%m%d')
     # Process each ASCII file in the directory
-    filenames = sorted([file for file in os.listdir(input_directory) if file.endswith('.asc')])
+    filenames = sorted([file for file in os.listdir(input_directory) if file.endswith('.asc') and file[-12:-4] == datestr])
     ascii_file = os.path.join(input_directory, filenames[0])
     netcdf_file = os.path.join(output_directory, 'EDDI_ETrs_' + datestr + '.nc')
-
-    datestr= ascii_file[-12:-4]
 
     #Read in EDDI header data
     with open(ascii_file, 'r') as EDDI_f:
