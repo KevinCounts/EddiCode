@@ -1,109 +1,71 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-#Import all relevant modules
-import xarray as xr
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os
 import numpy as np
-import glob
+import netCDF4
+import datetime
 import sys
 
-#Set input and output paths
-indir_wk = ''
-indir_mn = ''
-outdir = ''
+def main():
+    input_directory = 'path/to/ascii/files/'
+    output_directory = 'path/to/output/netcdf/'
+    #Read date from command line argument
+    datestr=sys.argv[1]
+    date = datetime.datetime.strptime(datestr,'%Y%m%d')
+    # Process each ASCII file in the directory
+    filenames = sorted([file for file in os.listdir(input_directory) if file.endswith('.asc') and file[-12:-4] == datestr])
+    ascii_file = os.path.join(input_directory, filenames[0])
+    netcdf_file = os.path.join(output_directory, 'EDDI_ETrs_' + datestr + '.nc')
 
+    #Read in EDDI header data
+    with open(ascii_file, 'r') as EDDI_f:
+        EDDI_header = EDDI_f.readlines()[:6]
+    #Read in variables used to define NLDAS grid
+    EDDI_header = [item.strip().split()[-1] for item in EDDI_header]
+    EDDI_cols = int(EDDI_header[0])
+    EDDI_rows = int(EDDI_header[1])
+    EDDI_xll = float(EDDI_header[2])
+    EDDI_yll = float(EDDI_header[3])
+    EDDI_cs = float(EDDI_header[4])
+    EDDI_nodata = float(EDDI_header[5])
 
-#Read date from command line argument
-date=(sys.argv[1])
+    #Create longitude and latitude arrays with appropriate values
+    lon_array = np.arange(EDDI_xll,EDDI_xll+(EDDI_cs*EDDI_cols),EDDI_cs)
+    lat_array = np.arange(EDDI_yll,EDDI_yll+(EDDI_cs*EDDI_rows),EDDI_cs)
 
-#Define year, month, and day from date
-mnarr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-yrout = date[0:4]
-mnout = mnarr[int(date[4:6])-1]
-dyout = date[6:8]
+    nc = netCDF4.Dataset(netcdf_file,'w',format='NETCDF4_CLASSIC')
+    #Create the dimensions:
+    nc.createDimension('lat',EDDI_rows)
+    nc.createDimension('lon',EDDI_cols)
 
-#no_data / missing data
+    ## Create the variables
+    longitude_nc = nc.createVariable('lon','f8',('lon',))
+    longitude_nc.long_name = 'Longitude'
+    longitude_nc.units = "degrees_east"
 
-#Create and sort weekly and monthly lists of EDDI files to be converted to a single NetCDF
-files_week=sorted(glob.glob(indir_wk+'EDDI_ETrs_*wk_'+str(date)+'.asc'))
-files_month=sorted(glob.glob(indir_mn+'EDDI_ETrs_*mn_'+str(date)+'.asc'))
-files=files_week + files_month
+    latitude_nc = nc.createVariable('lat','f8',('lat',))
+    latitude_nc.long_name = 'Latitude'
+    latitude_nc.units = 'degrees_north'
 
-#Create an evenly spaced list, 1...12
-numbers=np.linspace(1,24,24).astype('int')
-edData={}
+    latitude_nc[:] = lat_array
+    longitude_nc[:] = lon_array
 
-#Loop through all EDDI files in weekly list
-for i in range(0,len(files)):
-    edData[str(numbers[i])]=np.flipud(np.loadtxt(files[i],skiprows=6))
+    for filename in filenames:
+        ascii_file = os.path.join(input_directory, filename)
+        TSstr = ascii_file[-28:-13]
+        data = np.flipud(np.loadtxt(ascii_file,skiprows=6))
+        variable_nc = nc.createVariable('EDDI_'+TSstr,'f8',('lat','lon'),fill_value=EDDI_nodata)
+        variable_nc.long_name = "Drying or Wetting tendency"
+        variable_nc.units = " "
+        variable_nc[:,:] = data
 
-#Stack arrays in sequence along a third axis (time)
-edData=np.dstack([edData['1'],edData['2'],
-                edData['3'],edData['4'],
-                edData['5'],edData['6'],
-                edData['7'],edData['8'],
-                edData['9'],edData['10'],
-                edData['11'],edData['12'],
-                edData['13'],edData['14'],
-                edData['15'],edData['16'],
-                edData['17'],edData['18'],
-                edData['19'],edData['20'],
-                edData['21'],edData['22'],
-                edData['23'],edData['24']])
+    ## Attributes of the NetCDF:
+    nc.Name = 'EDDI for '+date.strftime('%Y/%m/%d')+'.'
+    nc.Long_name = 'CONUS-wide Evaporative Demand Drought Index (EDDI) changes for '+date.strftime("%B %d, %Y")+'.'
+    nc.Units = 'z-score (Standard Normal Distribution: +ve = dry; -ve = wet)'
+    nc.Conventions = "CF-1.8"
+    nc.Coordinate_system = 'Geographic'
 
-#Read in EDDI header data
-with open(files_week[0], 'r') as EDDI_f:
-    EDDI_header = EDDI_f.readlines()[:6]
-#Read in variables used to define NLDAS grid
-EDDI_header = [item.strip().split()[-1] for item in EDDI_header]
-EDDI_cols = int(EDDI_header[0])
-EDDI_rows = int(EDDI_header[1])
-EDDI_xll = float(EDDI_header[2])
-EDDI_yll = float(EDDI_header[3])
-EDDI_cs = float(EDDI_header[4])
-EDDI_nodata = float(EDDI_header[5])
+    nc.close()
 
-#Create longitude and latitude arrays with appropriate values
-lon_array=np.linspace(EDDI_xll,EDDI_xll+(EDDI_cs*EDDI_cols),EDDI_cols)
-lat_array=np.linspace(EDDI_yll,EDDI_yll+(EDDI_cs*EDDI_rows),EDDI_rows)
-
-#Create an xarray
-dsEDDI = xr.Dataset(
-    data_vars=dict(
-        EDDI=(["lat","lon","time"], edData),
-    ),
-    coords=dict(
-        time=(["time"],numbers),
-        lat=(["lat"], lat_array),
-        lon=(["lon"], lon_array),
-    ))
-
-#Rearrange dimensions to suit CF-compliance
-dsEDDI=dsEDDI.transpose("time", "lat", "lon")
-
-#Mask out all the no_data values
-dsEDDI = dsEDDI.where(dsEDDI['EDDI'] > -9999.)
-
-#Define attributes of EDDI_wk and EDDI_mn
-dsEDDI.EDDI.attrs["units"] = " "
-dsEDDI.EDDI.attrs["long_name"] = "Z-score, weekly EDDI"
-
-#Define attributes of time, latitude, and longitude dimensions 
-dsEDDI.time.attrs["description"] = "EDDI timescale in weeks or months: times 1-12 are 1-12 weekly EDDI timescales; times 13-24 are 1-12 monthly timescales"
-dsEDDI.time.attrs["long_name"] = "EDDI timescale in weeks or 30-day months"
-dsEDDI.time.attrs["units"] = "weeks or months"
-dsEDDI.lat.attrs["units"] = "degrees_north"
-dsEDDI.lat.attrs["long_name"] = "latitude"
-dsEDDI.lon.attrs["units"] = "degrees_east"
-dsEDDI.lon.attrs["long_name"] = "longitude"
-
-#Define global attributes 
-dsEDDI.attrs['Units'] = 'z-score (Standard Normal Distribution: +ve = dry; -ve = wet)'
-dsEDDI.attrs['Name'] = 'EDDI for '+date[4:6]+'/'+dyout+'/'+yrout+'.'
-dsEDDI.attrs['Long_name'] = 'CONUS-wide Evaporative Demand Drought Index (EDDI) at 24 timescales (1 to 12 weeks, 1 to 12 months) for '+mnout+' '+dyout+', '+yrout+'.'
-dsEDDI.attrs['Conventions'] = 'CF-1.8'
-dsEDDI.attrs['Coordinate system'] = 'Geographic'
-
-outfile = outdir+'EDDI_'+str(date)+'.nc'
-dsEDDI.to_netcdf(path=outfile)
-dsEDDI.close()
+main()
