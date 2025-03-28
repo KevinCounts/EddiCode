@@ -13,7 +13,7 @@ def main():
     datestr=sys.argv[1]
     date = datetime.datetime.strptime(datestr,'%Y%m%d')
     # Process each ASCII file in the directory
-    filenames = sorted([file for file in os.listdir(input_directory) if file.endswith('.asc') and file[-12:-4] == datestr])
+    filenames = sorted([file for file in os.listdir(input_directory) if file.endswith('.asc')])
     ascii_file = os.path.join(input_directory, filenames[0])
     netcdf_file = os.path.join(output_directory, 'EDDI_ETrs_' + datestr + '.nc')
 
@@ -22,8 +22,8 @@ def main():
         EDDI_header = EDDI_f.readlines()[:6]
     #Read in variables used to define NLDAS grid
     EDDI_header = [item.strip().split()[-1] for item in EDDI_header]
-    EDDI_cols = int(EDDI_header[0])
-    EDDI_rows = int(EDDI_header[1])
+    EDDI_cols = int(EDDI_header[1])
+    EDDI_rows = int(EDDI_header[0])
     EDDI_xll = float(EDDI_header[2])
     EDDI_yll = float(EDDI_header[3])
     EDDI_cs = float(EDDI_header[4])
@@ -52,7 +52,10 @@ def main():
 
     for filename in filenames:
         ascii_file = os.path.join(input_directory, filename)
-        TSstr = ascii_file[-17:-13]
+        if "Avgcont" in ascii_file:
+            TSstr = ascii_file[-22:-13]
+        else:
+            TSstr = ascii_file[-29:-13]
         data = np.flipud(np.loadtxt(ascii_file,skiprows=6))
         variable_nc = nc.createVariable('EDDI_'+TSstr,'f8',('lat','lon'),fill_value=EDDI_nodata)
         variable_nc.long_name = "Attribution"
