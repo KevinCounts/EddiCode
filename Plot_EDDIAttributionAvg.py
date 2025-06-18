@@ -46,10 +46,10 @@ def geoparam(datain_str = []):
     cellsize = float(datain_str[4][8:])
 
     # Ingest EDDI data and change the sign (to force colorbar's drought->wet order)
-    invar = np.zeros((nrows, ncols), dtype='f')
-    for i in range(nrows):
+    invar = np.zeros((ncols, nrows), dtype='f')
+    for i in range(ncols):
         row_vals = datain_str[6 + i].split()
-        invar[i, :] = [-1.0 * float(val) for val in row_vals]
+        invar[i, :] = [1.0 * float(val) for val in row_vals]
     lonin=np.linspace(xllcorner,xllcorner+(cellsize*nrows),nrows)
     latin=np.linspace(yllcorner,yllcorner+(cellsize*ncols),ncols)
     latin=np.flip(latin)

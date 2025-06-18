@@ -40,7 +40,7 @@ def geoparam(datain_str = []):
     invar = np.zeros((nrows, ncols), dtype='f')
     for i in range(nrows):
         row_vals = datain_str[6 + i].split()
-        invar[i, :] = [-1.0 * float(val) for val in row_vals]
+        invar[i, :] = [1.0 * float(val) for val in row_vals]
     lonin=np.linspace(xllcorner,xllcorner+(cellsize*ncols),ncols)
     latin=np.linspace(yllcorner,yllcorner+(cellsize*nrows),nrows)
     latin=np.flip(latin)
